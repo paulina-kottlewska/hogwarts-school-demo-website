@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block modal %}
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-crest text-center">
+            <img src="/static/kindpng_215108.png" class="card-img-top img-fluid letter-crest my-4" alt="hogwarts crest">
+        </div>
+        <div class="modal-header border-bottom-0 text-center">
+          <h4 class="modal-title fw-bold fs-3 mx-auto" id="staticBackdropLabel">HOGWARTS SCHOOL OF WITCHCRAFT AND WIZARDRY</h4>
+        </div>
+        <div class="modal-body">
+          <div class="my-4 text-center fs-5 lh-sm">
+            <p class="fs-4">Headmaster: Albus Dumbledore</p>
+            <p>(Order of Merlin, First Class, Grand Sorc., Chf. Warlock,</p>
+            <p>Supreme Mugwump, International Confed. of Wizards)</p>
+          </div>
+          <div class="mx-auto px-lg-4 px-2 mt-5 pt-5 fs-4">
+            <p class="mb-5">Dear {{ name }},<br><br>
+            We are pleased to inform you that you have a place at Hogwarts School of Witchcraft and Wizardry.<br>
+            Please find a list of all necessary books and equipment in the student panel.<br>
+            Term begins on 1st of September.<br><br>
+            If you wish to proceed with the admission please press continue.</p><br>
+            <p class="mb-5">Yours sincerely,<br>
+            <span class="modal-signature fw-bold fs-3">Minevra McGonagall</span><br>
+            Deputy Headmistress
+            </p>
+          </div>
+        </div>
+        <form action="/sorting" method="post">
+          <div class="modal-footer border-top-0">
+            <button type="submit" class="btn btn-outline-dark modal-continue fw-bold">Continue</button>
+          </div>
+       </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+  // Show the modal
+   $(document).ready(function() {
+    $("#staticBackdrop").modal("show");
+   });
+
+</script>
+{% endblock  %}

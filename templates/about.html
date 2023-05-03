@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="row row-cols-1 row-cols-xxl-2 g-2 p-xxl-4 bg-dark">
+    <div class="col my-auto">
+      <div class="card mt-4 p-xxl-4 bg-dark border-0">
+        <div class="card-body text-light">
+           <h5 class="card-title mb-4 fw-bold">Welcome to Hogwarts!</h5>
+           <!--https://www.hp-lexicon.org/thing/history-of-hogwarts/ and Harry Potter and the Philosopher's Stone-->
+           <p class="card-text welcome-text mt-4 lh-lg">Hogwarts was founded over a thousand years ago - the precise date is uncertain - by the four greatest witches and wizards that ever lived.
+            They built this castle together to create a school where young people of the wizarding world could study and be trained in the magical arts to become skilled, fully-trained wizards.
+            These four great wizards each founded one of the Houses of the school that they worked together to form: Hogwarts School of Witchcraft and Wizardry. They have been referred to as "The Hogwarts Four"
+            The four houses are called: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin. Each house has its own noble history, and each has produced outstanding witches and wizards.
+            While you are here, your house will be something like your family within Hogwarts. You will have classes with the rest of your house, sleep in your house dormitory and spend free time in your house common room.
+            While you are at Hogwarts, your triumphs will earn your house points, while any rule-breaking will lose house points. At the end of the year, the house with the most points is awarded the House Cup, a great honor.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col my-auto">
+      <div class="card mt-5 card-hogwartsImg bg-dark border-0">
+        <!--https://unsplash.com/photos/-fFRcwJ9JYg?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink Photo by Mingdi Li on Unsplash-->
+        <img src="/static/mingdi-li--fFRcwJ9JYg-unsplash2.jpg" class="card-img-top img-fluid castle mx-auto" alt="hogwarts castle">
+      </div>
+    </div>
+    <div class="col my-auto">
+      <div class="card mt-5 p-xxl-5 bg-dark border-0 text-center">
+        <div class="card-body text-light">
+          <h5 class="card-title fw-bold">Headmaster</h5>
+          <ul class="list-group list-group-flush mt-2">
+            <li class="list-group-item border-0 bg-dark teachers text-light">Albus Dumbledore</li>
+          </ul>
+          <h5 class="card-title fw-bold mt-4">Teachers</h5>
+          <ul class="list-group list-group-flush mt-2">
+            <li class="list-group-item border-0 bg-dark teachers text-light">Aurora Sinistra</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Bathsheda Babbling</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Charity Burbage</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Cuthbert Binns</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Filius Flitwick</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Firenze</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Minevra McGonagall</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Pomona Sprout</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Remus Lupin</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Rolanda Hooch</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Rubeus Hagrid</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Septima Vector</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Severus Snape</li>
+            <li class="list-group-item border-0 bg-dark teachers text-light">Sybill Trelawney</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col my-auto">
+      <div class="card mt-5 p-xxl-4 bg-dark border-0">
+        <img src="/static/school-crest.png" class="card-img-top img-fluid mx-auto crest mt-3" alt="Hogwarts Crest">
+      </div>
+    </div>
+  </div>
+{% endblock %}

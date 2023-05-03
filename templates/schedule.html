@@ -1,0 +1,92 @@
+{% extends "studentpanel.html" %}
+
+{% block s %}
+active
+{% endblock %}
+
+{% block img %}
+visually-hidden
+{% endblock %}
+
+{% block content %}
+    <h3 class="mt-5 fw-bold">1<sup>st</sup> years schedule</h3>
+    <div class="table-responsive">
+      <table class="table table-bordered text-light mt-5">
+        <thead class="bg-secondary">
+          <tr>
+            <th class="py-3" scope="col">Time</th>
+            <th class="schedule py-3" scope="col">Monday</th>
+            <th class="schedule py-3" scope="col">Tuesday</th>
+            <th class="schedule py-3" scope="col">Wednesday</th>
+            <th class="schedule py-3" scope="col">Thursday</th>
+            <th class="schedule py-3" scope="col">Friday</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="py-4">8.30-9.30</td>
+            <td class="py-3">Herbology G/H<br>D.A.D.A. R/S</td>
+            <td class="py-3">Charms G/R<br>Transfig. H/S</td>
+            <td class="py-3">Charms H/S<br>Transfig. G/R</td>
+            <td></td>
+            <td class="py-3">Potions H/R<br>Astronomy G/S</td>
+          </tr>
+          <tr>
+            <td class="py-4">9.45-10.45</td>
+            <td class="py-3">Herbology R/S<br>D.A.D.A. G/H</td>
+            <td class="py-3">Herbology G/H<br>D.A.D.A. R/S</td>
+            <td class="py-3">Charms H/S<br>Transfig. G/R</td>
+            <td class="py-3">Charms G/R<br>Transfig. H/S</td>
+            <td class="py-3">Potions H/R<br>Astronomy G/S</td>
+          </tr>
+          <tr>
+            <td class="py-4">11.00-12.00</td>
+            <td class="py-3">Charms H/S<br>Transfig. G/R</td>
+            <td class="py-3">Herbology R/S<br>D.A.D.A. G/H</td>
+            <td class="py-3">Herbology G/H<br>D.A.D.A. R/S</td>
+            <td class="py-3">Charms G/R<br>Transfig. H/S</td>
+            <td class="py-3">Potions H/R<br>Astronomy G/S</td>
+          </tr>
+          <tr class="bg-secondary">
+            <td class="py-3">12.00-13.00</td>
+            <td class="border-end-0" colspan="2"></td>
+            <td class="fw-bold border-start-0 border-end-0 py-3">Lunch Break</td>
+            <td class="border-start-0" colspan="2"></td>
+          </tr>
+          <tr>
+            <td class="py-4">13.00-14.00</td>
+            <td class="py-3">Charms G/R<br>Transfig. H/S</td>
+            <td class="py-3">History of Magic<br>G/H/R/S</td>
+            <td class="py-3">Herbology R/S<br>D.A.D.A. G/H</td>
+            <td class="py-3">Charms H/S<br>Transfig. G/R</td>
+            <td class="py-3">Potions G/S<br>Astronomy H/R</td>
+          </tr>
+          <tr>
+            <td class="pt-4">14.15-15.15</td>
+            <td class="py-3">History of Magic<br>G/H/R/S</td>
+            <td class="py-3">Potions G/S<br>Astronomy H/R</td>
+            <td class="py-3">Potions H/R<br>Astronomy G/S</td>
+            <td class="py-3">History of Magic<br>G/H/R/S</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="py-4">15.30-16.30</td>
+            <td class="py-3">Potions G/S<br>Free H/R</td>
+            <td class="py-3">Potions H/R<br>Free G/S</td>
+            <td class="py-3">Flying<br>G/H/R/S</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="py-4">Midnight</td>
+            <td></td>
+            <td></td>
+            <td class="py-3">Astronomy<br>G/H/R/S</td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}

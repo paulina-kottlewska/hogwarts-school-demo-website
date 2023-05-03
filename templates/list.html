@@ -1,0 +1,66 @@
+{% extends "studentpanel.html" %}
+
+{% block l %}
+active
+{% endblock %}
+
+{% block list %}
+<div class="modal fade text-dark" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-crest">
+              <img src="/static/kindpng_215108.png" class="card-img-top img-fluid letter-crest my-3" alt="hogwarts crest">
+          </div>
+        <div class="modal-header border-bottom-0 mx-auto">
+          <h4 class="modal-title fw-bold fs-4 mx-1" id="staticBackdropLabel">HOGWARTS SCHOOL OF WITCHCRAFT AND WIZARDRY</h4>
+        </div>
+        <div class="modal-body mx-4 my-5 fs-4 text-start">
+          <p><span class="fw-bold">UNIFORM</span><br>First year students will require:
+            <ol>
+              <li>Three sets of plain work robes (black)</li>
+              <li>One plain pointed hat (black) for day wear</li>
+              <li>One pair of protective gloves (dragon hide or similar)</li>
+              <li>One winter cloak (black, silver fastenings)</li>
+            </ol>
+            Please note that all student's clothes should carry a name tags at all times<br><br>
+            <span class="fw-bold">BOOKS</span><br>All students should have a copy of the following books:
+            <ul class="equipment"><br>
+              <li>The Standard Book of Spells, Grade 1 by Miranda Goshawk</li>
+              <li>A History of Magic by Bathilda Bagshot</li>
+              <li>Magical Theory by Adalbert Waffling</li>
+              <li>A Beginner's Guide to Transfiguration by Emeric Switch</li>
+              <li>One Thousand Magical Herbs and Fungi by Phyllida Spore</li>
+              <li>Magical Drafts and Potions by Arsenius Jigger</li>
+              <li>Fantastic Beasts and Where to Find Them by Newt Scamander</li>
+              <li>The Dark Forces: A Guide to Self-Protection by Quentin Trimble</li>
+            </ul><br>
+            <span class="fw-bold">OTHER EQUIPMENT</span><br>
+            <ul class="equipment">
+              <li>1 Wand</li>
+              <li>1 Cauldron (pewter, standard size 2)</li>
+              <li>1 set of glass crystal phials</li>
+              <li>1 telescope</li>
+              <li>1 set of brass scales</li>
+            </ul>
+            Students may also bring an owl OR a cat OR a toad<br><br>
+            <span class="fw-bold">FIRST YEARS ARE NOT ALLOWED THEIR OWN BROOMSTICKS</span>
+          </p>
+        </div>
+        <div class="modal-footer border-top-0">
+          <button type="submit" class="btn btn-outline-dark modal-continue fw-bold" data-bs-dismiss="modal">Close</button>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+  // Show the modal
+   $(document).ready(function() {
+    $("#staticBackdrop").modal("show");
+   });
+
+</script>
+{% endblock  %}

@@ -1,0 +1,32 @@
+{% extends "studentpanel.html" %}
+
+{% block g %}
+active
+{% endblock %}
+
+{% block img %}
+visually-hidden
+{% endblock %}
+
+{% block content %}
+<h3 class="mt-5 fw-bold">My Grades</h3>
+<div class="table-responsive">
+  <table class="table text-light mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Subject</th>
+        <th scope="col">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for subject in subjects %}
+      <tr>
+        <td class="text-center py-3">{{ subject.subject }}</td>
+        <td class="w-50"></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

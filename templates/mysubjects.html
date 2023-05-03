@@ -1,0 +1,54 @@
+{% extends "studentpanel.html" %}
+
+{% block sub %}
+active
+{% endblock %}
+
+{% block img %}
+visually-hidden
+{% endblock %}
+
+{% block content %}
+<h3 class="mt-5 fw-bold">My Subjects</h3>
+<p class="mt-4">You are enrolled in the following subjects:</p>
+<div class="table-responsive">
+  <table class="table text-light mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Subject</th>
+        <th scope="col">Teacher</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for subject in enrolled_subjects %}
+      <tr>
+        <td>
+           <p class="text-center my-auto">
+              <button class="btn btn-light fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#{{ subject.id }}" aria-expanded="false" aria-controls="{{ subject.id }}">
+                    {{ subject.subject }}
+              </button>
+            </p>
+            <div class="row">
+                <div class="col">
+                  <div class="collapse multi-collapse" id="{{ subject.id }}">
+                    <div class="card card-body bg-dark border-0">
+                      <ol class="list-group list-group-flush text-center">
+                        {% for item in curriculum %}
+                          {% if item.id == subject.id %}
+                            <li class="list-group-item bg-dark text-light border-light py-3">{{item.content}}</li>
+                          {% endif %}
+                        {% endfor %}
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+             </div>
+        </td>
+        <td class="py-3">{{ subject.teacher }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}

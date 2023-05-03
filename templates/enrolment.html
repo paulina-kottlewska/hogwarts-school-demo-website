@@ -1,0 +1,258 @@
+{% extends "studentpanel.html" %}
+
+{% block e %}
+active
+{% endblock %}
+
+{% block img %}
+visually-hidden
+{% endblock %}
+
+{% block enrol %}
+    <h3 class="mt-5 fw-bold">Subject's List</h3>
+    <p class="mt-4">Please enrol in subjects available to your year.</p>
+    <div class="table-responsive">
+      <table class="table text-light mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Subject</th>
+            <th scope="col">Teacher</th>
+            <th scope="col">Year</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-secondary">
+            <td></td>
+            <td class="fw-bold">CORE CLASSES</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="py-3">Astronomy</td>
+            <td class="py-3">Aurora Sinistra</td>
+            <td class="py-3">All</td>
+            <td><button class="btn btn-outline-light my-1 enrol" id="Astronomy">Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Charms</td>
+            <td class="py-3">Filius Flitwick</td>
+            <td class="py-3">All</td>
+            <td><button class="btn btn-outline-light my-1 enrol" id="Charms">Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Defence Against the Dark Arts</td>
+            <td class="pt-4">Remus Lupin</td>
+            <td class="pt-4">All</td>
+            <td><button class="btn btn-outline-light mt-3 enrol" id="DADA">Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Herbology</td>
+            <td class="py-3">Pomona Sprout</td>
+            <td class="py-3">All</td>
+            <td><button class="btn btn-outline-light my-1 enrol" id="Herbology">Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">History of Magic</td>
+            <td class="py-3">Cuthbert Binns</td>
+            <td class="py-3">All</td>
+            <td><button class="btn btn-outline-light my-1 enrol" id="HoM">Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Potions</td>
+            <td class="py-3">Severus Snape</td>
+            <td class="py-3">All</td>
+            <td><button class="btn btn-outline-light my-1 enrol" id="Potions">Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Transfiguration</td>
+            <td class="py-3">Minevra McGonagall</td>
+            <td class="py-3">All</td>
+            <td><button class="btn btn-outline-light my-1 enrol" id="Transfig">Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="pt-5">Flying</td>
+            <td class="pt-5">Rolanda Hooch</td>
+            <td>
+              1<sup>st</sup> year - compulsory<br>
+              2<sup>nd</sup> and up - optional
+            </td>
+            <td><button class="btn btn-outline-light mt-4 enrol" id="Flying">Enrol</button></td>
+          </tr>
+          <tr class="bg-secondary">
+            <td></td>
+            <td class="fw-bold">ELECTIVES</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="py-3">Arithmancy</td>
+            <td class="py-3">Septima Vector</td>
+            <td class="py-3">3<sup>rd</sup> and up </td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Care of Magical Creatures</td>
+            <td class="pt-4">Rubeus Hagrid</td>
+            <td class="pt-4">3<sup>rd</sup> and up</td>
+            <td><button class="btn btn-outline-light mt-3" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Divination</td>
+            <td class="py-3">Sybill Trelawney/Firenze</td>
+            <td class="py-3">3<sup>rd</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Muggle Studies</td>
+            <td class="py-3">Charity Burbage</td>
+            <td class="py-3">3<sup>rd</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Study of Ancient Runes</td>
+            <td class="py-3">Bathsheda Babbling</td>
+            <td class="py-3">3<sup>rd</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Advanced Arithmancy Studies</td>
+            <td class="pt-4">Septima Vector</td>
+            <td class="pt-4">6<sup>th</sup> and up</td>
+            <td><button class="btn btn-outline-light mt-3" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Alchemy</td>
+            <td></td>
+            <td class="py-3">6<sup>th</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr class="bg-secondary">
+            <td></td>
+            <td class="fw-bold">EXTRA-CURRICULAR SUBJECTS</td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class="py-3">Magical Theory</td>
+            <td></td>
+            <td class="py-3">1<sup>st</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1 enrol" id="MT">Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Flying</td>
+            <td class="py-3">Rolanda Hooch</td>
+            <td class="py-3">2<sup>nd</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Art</td>
+            <td></td>
+            <td class="py-3">3<sup>rd</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Music</td>
+            <td></td>
+            <td class="py-3">3<sup>rd</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Ghoul Studies</td>
+            <td></td>
+            <td class="py-3">3<sup>rd</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Xylomancy</td>
+            <td></td>
+            <td class="py-3">3<sup>rd</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="pt-4">Apparition</td>
+            <td class="py-3">Wilkie Twycross - a Ministry of Magic Apparition Instructor</td>
+            <td class="pt-4">6<sup>th</sup></td>
+            <td><button class="btn btn-outline-light mt-3" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Ancient Studies</td>
+            <td></td>
+            <td class="py-3">6<sup>th</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Muggle Art</td>
+            <td class="py-3">Charity Burbage</td>
+            <td class="py-3">6<sup>th</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+          <tr>
+            <td class="py-3">Muggle Music</td>
+            <td class="py-3">Charity Burbage</td>
+            <td class="py-3">6<sup>th</sup> and up</td>
+            <td><button class="btn btn-outline-light my-1" disabled>Enrol</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+{% endblock %}
+
+{% block script %}
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+  // Get the enrolled subjects from Python - parse the JSON string back into a JavaScript. |safe filter is used to tell Jinja2 that the content is safe and shouldn't be escaped
+  let enrolledSubjects = JSON.parse('{{ subjects_json|safe }}');
+
+  // Update buttons based on the enrolled subjects
+  function updateButtons() {
+    enrolledSubjects.forEach((subject) => {
+      let button = document.getElementById(subject)
+        if(button) {
+          button.disabled = true;
+          button.innerText = "Enrolled"
+        }
+    })
+  }
+
+  // Call the function when the page loads
+  updateButtons()
+
+  // Get all the buttons
+  let buttons = Array.from(document.querySelectorAll(".enrol"));
+
+  // Change the clicked button to disabled and its text to enrolled
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+
+      // Get the button id and send it to Python to update the database
+      let subject_name = button.id;
+
+      // Fetch the data from Python to update the button text
+      fetch("/enrolment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({subject_name: subject_name}),
+      })
+      .then(response => response.json())
+      .then(data => {
+        if(data.enrolled && data.name === button.id) {
+          button.disabled = true;
+          button.innerText = "Enrolled";
+        }
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      }); 
+    });
+});
+
+
+</script>
+
+{% endblock %}

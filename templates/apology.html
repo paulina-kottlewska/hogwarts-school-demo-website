@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <!-- https://memegen.link/ -->
+    <!--apology pset9 - Finance CS50-->
+    <!--image https://www.flickr.com/photos/elsa11/48930452073-->
+    <img alt="{{ top }}" class="border img-fluid mt-5" src="http://memegen.link/custom/{{ top | urlencode }}/{{ bottom | urlencode }}.jpg?background=https://live.staticflickr.com/65535/48930452073_6a4e0884ed_b.jpg&token=yru4iaci3fpkh60jj15z&width=400" title="{{ top }}">
+
+{% endblock %}

@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+}
+
+main {
+    height: 100vh;
+}
+
+/* Size for brand */
+nav .navbar-brand{
+    font-size: xx-large;
+}
+
+.nav-link {
+    color: #f8f9fa;
+}
+
+.modal-continue, .sorted-house {
+    font-family: 'Cinzel', serif;
+}
+
+
+/* Main Website */
+.crest {
+    width: 60%;
+    height: 70%;
+}
+
+.castle{
+    width: 95%;
+    height: 75%;
+}
+
+.school {
+    font-size: 1em;
+}
+
+/* MODAL */
+.modal-content {
+    background-color: rgb(250,250,210);
+    font-family: 'Charm', cursive;
+}
+
+.modal-signature {
+    font-family: 'Tangerine', cursive;
+}
+
+.letter-crest {
+    width: 33%;
+    height: 40%;
+}
+
+/* QUIZ */
+#next:hover {
+    font-weight: bold;
+}
+
+.house-crest {
+    width: 25%;
+    height: 45%;
+}
+
+.sorting-hat {
+    width: 30%;
+    height: 50%;
+}
+
+/*Student Panel*/
+a.nav-link:hover, a.nav-link:focus {
+    color: #f8f9fa;
+    
+}
+
+.equipment {
+    list-style-type: none;
+}
+
+.schedule {
+    width: 19%;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #f8f9fa;
+    color: black;
+    font-weight: bold;
+}
+
+#nav-image {
+    opacity: 0.7;
+}
+
+@media only screen and (max-width: 715px) {
+    .school {
+        display: block;
+    }
+    .quiz-container {
+        width: 80% !important;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .border-md-start {
+        border-left: 1px solid;
+    }
+}
+
+@media only screen and (max-width: 953px) {
+    .panel-card {
+        width: 100% !important;
+    }
+    .panel-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .sorting-hat {
+        width: 37% !important;
+    }
+}
+
+@media only screen and (min-width: 1900px) {
+    .castle {
+        width: 80%
+    }
+    .crest {
+        width: 45%;
+    }
+    .welcome-text {
+        padding: 2rem 5rem 5rem 5rem;
+    }
+    .card-hogwartsImg {
+        padding: 2.5rem;
+    }
+    .panel-width {
+        width: 70%;
+    }
+    .sorting-hat {
+        width: 30% !important;
+    }
+}

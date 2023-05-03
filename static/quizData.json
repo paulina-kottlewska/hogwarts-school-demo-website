@@ -1,0 +1,65 @@
+ [
+    {
+        "q": "Choose an element:",
+        "a": ["Fire", "Gryffindor"],
+        "b": ["Earth", "Hufflepuff"],
+        "c": ["Water", "Slytherin"],
+        "d": ["Air", "Ravenclaw"]
+    },
+    {
+        "q": "Which subject seems more appealing to you?",
+        "a": ["Astrology", "Ravenclaw"],
+        "b": ["Herbology", "Hufflepuff"],
+        "c": ["Potions", "Slytherin"],
+        "d": ["Defence Against the Dark Arts", "Gryffindor"]
+    },
+    {
+        "q": "Chose a core of the wand you would like to have:",
+        "a": ["Hippogriff Feather", "Gryffindor"],
+        "b": ["Unicorn Hair", "Ravenclaw"],
+        "c": ["Fairy Wings", "Hufflepuff"],
+        "d": ["Dragon Heartstring", "Slytherin"]
+    },
+    {
+        "q": "Which Quidditch position would you like to play?",
+        "a": ["Beater", "Slytherin"],
+        "b": ["Chaser", "Ravenclaw"],
+        "c": ["Keeper", "Hufflepuff"],
+        "d": ["Seeker", "Gryffindor"]
+    },
+    {
+        "q": "Which animal would be your patronus?",
+        "a": ["Black Swan", "Ravenclaw"],
+        "b": ["Dolphin", "Hufflepuff"],
+        "c": ["Fox", "Slytherin"],
+        "d": ["Lion", "Gryffindor"]
+    },
+    {
+        "q": "Which fault do you notice in people that bothers you the most?",
+        "a": ["Stupidity", "Ravenclaw"],
+        "b": ["Dishonesty", "Slytherin"],
+        "c": ["Laziness", "Hufflepuff"],
+        "d": ["Cowardice", "Gryffindor"]
+    },
+    {
+        "q": "Chose the word that best describes you:",
+        "a": ["Ambitious", "Slytherin"],
+        "b": ["Brave", "Gryffindor"],
+        "c": ["Kind", "Hufflepuff"],
+        "d": ["Creative", "Ravenclaw"]
+    },
+    {
+        "q": "You have a free period, what do you do with it?",
+        "a": ["Hang out with my friends in the common room", "Hufflepuff"],
+        "b": ["Play competitive games", "Slytherin"],
+        "c": ["Go to library to study", "Ravenclaw"],
+        "d": ["Explore every corner of the castle and its grounds", "Gryffindor"]
+    },
+    {
+        "q": "If given a choice, which house do you wish to be in?",
+        "a": ["Gryffindor", "Gryffindor"],
+        "b": ["Hufflepuff", "Hufflepuff"],
+        "c": ["Ravenclaw", "Ravenclaw"],
+        "d": ["Slytherin", "Slytherin"]
+    }
+]

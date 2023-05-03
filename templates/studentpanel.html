@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="card panel-card w-75 bg-dark border-0 text-light my-5 mx-auto">
+  <nav class="mx-auto">
+    <div class="nav nav-tabs panel-nav border-0" id="nav-tab" role="tablist">
+      <a class="text-decoration-none nav-link rounded-pill {% block sub %}{% endblock %}" href="/subjects" role="tab">
+          My Subjects
+      </a>
+      <a class="text-decoration-none nav-link rounded-pill {% block e %}{% endblock %}" href="/enrolment" role="tab">
+          Subject Enrolment
+      </a>
+      <a class="text-decoration-none nav-link rounded-pill {% block g %}{% endblock %}" href="/grades" role="tab">
+          Grades
+      </a>
+      <a class="text-decoration-none nav-link rounded-pill {% block s %}{% endblock %}" href="/schedule" role="tab">
+          Schedule
+      </a>
+      <a class="text-decoration-none nav-link rounded-pill {% block l %}{% endblock %}" href="/list" role="tab">
+          List of Books
+      </a>
+    </div>
+  </nav>
+  <div class="tab-content text-light my-5 mx-xl-5 px-xl-5" id="nav-tabContent">
+    <div class="tab mt-5 p-xxl-5 {% block img %}{% endblock %}" id="nav-image" role="tabpanel">
+      <!-- https://www.vhv.rs/viewpic/mwwmJm_harry-potter-owl-drawing-transparent-cartoons-harry-potter/ -->
+      <img src="../static/hedwig.png" alt="Hedwig" class="w-25">
+    </div>
+    <div class="tab panel-width mx-auto" role="tabpanel">
+      {% block content %}{% endblock %}
+    </div>
+    <div class="tab panel-width mx-auto" role="tabpanel">
+      {% block enrol %}{% endblock %}
+    </div>
+    <div class="tab" role="tabpanel">
+      {% block list %}{% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}

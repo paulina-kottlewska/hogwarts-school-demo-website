@@ -1,0 +1,325 @@
+{% extends 'layout.html' %}
+
+{% block main %}
+
+    <div class="quiz-container w-50 my-5 pb-5 text-light mx-auto" id="quizContainer">
+        <div class="my-4">
+            <h3 class="fs-2 mb-4">Sorting Hat Quiz</h3>
+            <!--https://www.cgtrader.com/3d-models/character/fantasy-character/harry-potter-hat-sorting-hat-->
+            <img src="/static/sorting-hat.png" class="card-img-top img-fluid sorting-hat mt-4 mb-2 w-50" alt="sorting hat">
+        </div>
+        <div class="quiz-body mt-5 mb-4">
+            <h4 class="mb-4 fs-3" id="question">Question</h5>
+            <div class="form-check p-0">
+                <input class="btn-check answers" type="radio" name="flexRadioDefault" value="house" id="answer1">
+                    <label class="d-grid col-lg-6 col-xxl-5 mb-3 btn btn-outline-light fs-5 mx-auto" for="answer1" id="a1">
+                        Choice 1
+                    </label>
+            </div>
+            <div class="form-check p-0">
+                <input class="btn-check answers" type="radio" name="flexRadioDefault" value="house" id="answer2">
+                    <label class="d-grid col-lg-6 col-xxl-5 mx-auto mb-3 btn btn-outline-light fs-5" for="answer2" id="a2">
+                        Choice 2
+                    </label>
+            </div>
+            <div class="form-check p-0">
+                <input class="btn-check answers" type="radio" name="flexRadioDefault" value="house" id="answer3">
+                    <label class="d-grid col-lg-6 col-xxl-5 mx-auto mb-3 btn btn-outline-light fs-5" for="answer3" id="a3">
+                        Choice 3
+                    </label>
+            </div>
+            <div class="form-check p-0">
+                <input class="btn-check answers" type="radio" name="flexRadioDefault" value="house" id="answer4">
+                    <label class="d-grid col-lg-6 col-xxl-5 mx-auto btn btn-outline-light fs-5" for="answer4" id="a4">
+                        Choice 4
+                    </label>
+            </div>
+        </div>
+        <div class="footer">
+            <form action="/sorting" method="post">
+                <button type="button" class="btn btn-outline-light mx-auto px-4 py-2 next-q" id="next" disabled>Next</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal fade invisible" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content" id="background">
+            <div class="modal-crest text-center">
+                <img src="/static/sorted.png" class="card-img-top img-fluid house-crest my-3" alt="hogwarts crest" id="houseImg">
+            </div>
+            <div class="modal-body sorted-house text-light text-center my-4">
+                <p class="fs-4">You're a</p>
+                <p class="fs-1" id="finalHouse">House</p>
+              <div class="modal-footer border-top-0 mt-4">
+                <a href="/student" class="mx-auto">
+                    <button type="submit" class="btn btn-outline-light modal-continue">Continue to Student Panel</button>
+                </a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}
+
+
+{% block script %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+let quiz;
+
+// Get quiz from JSON file and load it
+fetch("/static/quizData.json")
+    .then(response => response.json())
+    .then(data => {
+        quiz = data;
+        startQuiz();
+    })
+    .catch(error => console.error("Error:", error))
+
+
+// Elements realted to modal and quiz container
+const quiz_container = document.getElementById("quizContainer");
+const modal = document.getElementById("staticBackdrop");
+const background = document.getElementById("background");
+const houseImg = document.getElementById("houseImg");
+const finalHouse = document.getElementById("finalHouse");
+
+const answers = Array.from(document.querySelectorAll(".answers"));
+const divs = Array.from(document.querySelectorAll(".form-check"));
+const labels = Array.from(document.querySelectorAll("label"));
+
+//Elements related to quiz content
+const question = document.getElementById("question");
+const a1 = document.getElementById("a1");
+const val1 = document.getElementById("answer1");
+const a2 = document.getElementById("a2");
+const val2 = document.getElementById("answer2");
+const a3 = document.getElementById("a3");
+const val3 = document.getElementById("answer3");
+const a4 = document.getElementById("a4");
+const val4 = document.getElementById("answer4");
+const next = document.getElementById("next");
+
+//Keep track of question number
+let index = 0
+
+//Update the house points with the selected answer
+let houses = {
+    Gryffindor: 0,
+    Hufflepuff: 0,
+    Ravenclaw: 0,
+    Slytherin: 0
+}
+
+function enableButton() {
+    
+    // The button is enabled after the user clicks on one of the answers
+    answers.forEach(answer => {
+        answer.addEventListener("click", () => {
+            next.disabled = false;
+        });
+    });
+}
+
+//Update the text of question, answers, and values with the corresponding house name
+const answerElements = [
+    {key: "a", textElement: a1, valueElement: val1},
+    {key: "b", textElement: a2, valueElement: val2},
+    {key: "c", textElement: a3, valueElement: val3},
+    {key: "d", textElement: a4, valueElement: val4}
+]
+
+function startQuiz() {
+    // Disable the button whenever new question loads
+    next.disabled = true;
+
+    // Update the text of the question to current question
+    let currentQuestion = quiz[index];
+    question.innerText = currentQuestion["q"];
+
+    // Update the text of the answers to current answers
+    answerElements.forEach(({key, textElement, valueElement}) => {
+        textElement.innerText = currentQuestion[key][0];
+        valueElement.value = currentQuestion[key][1];
+    })
+
+    // Call enableButton function to ensure the button is enabled after an answer is selected
+    enableButton();
+}
+
+//Return value of the house from selected answer
+function selected() {
+
+    const checkedAnswer = answers.find(answer => answer.checked);
+    return checkedAnswer ? checkedAnswer.value : null;
+
+}
+
+//Return array with house(s) with the highest score
+function count_points() {
+
+    //Get values of all houses and find the highest score
+    const maxScore = Math.max(...Object.values(houses))
+
+    //Get names of all houses
+    const house_names = Object.keys(houses);
+
+    //If the name is equal to the score add it to the array
+    const my_house = house_names.filter(house_name => houses[house_name] === maxScore);
+  
+    return my_house;
+}
+
+//Change background of the modal to match the house color
+function color() {
+
+    // Get the house with the highest score
+    const house = count_points();
+
+    // House names and their corresponding colors
+    const houseColor = {
+        Gryffindor: "rgb(176, 16, 16)",
+        Hufflepuff: "rgb(235, 215, 5)",
+        Ravenclaw: "rgb(6, 14, 184)",
+        Slytherin: "rgb(37, 120, 59)"
+    }
+
+    // Return color of the house with the highest score
+    return houseColor[house];
+}
+
+//Change image to match the house color
+function crest() {
+
+    // Get the house with the highest score
+    const house = count_points();
+
+     // House names and their corresponding img paths
+    const houseCrests = {
+        Gryffindor: "/static/Gryffindor.png",
+        Hufflepuff: "/static/Hufflepuff.png",
+        Ravenclaw: "/static/Ravenclaw.png",
+        Slytherin: "/static/Slytherin.png"
+    }
+
+    // Update the crest src 
+    const crest = houseImg.src;
+    houseImg.src = houseCrests[house];
+
+    return crest;
+}
+
+function clearChecked() {
+    
+    // Set checked to false to display new set of answers without checked input
+    answers.forEach(answer => {
+        answer.checked = false;
+    })
+}
+
+next.addEventListener("click", () => {
+
+    // Get the name of the selected house
+    const selectedHouse = selected();
+    console.log(selectedHouse)
+    
+    // Increment the points for the selected house
+    houses[selectedHouse] += 1;
+  
+    // Increase the question index by 1
+    index++;
+
+    //Keep loading quiz till the index is smaller than the second last question
+    if(index < (quiz.length - 1)) {
+        startQuiz();
+        // Clear the checked status of radio buttons each time new question is loaded
+        clearChecked();  
+    }
+
+    //When you reach the second last question, show results or load the last question(if there's a tie between the houses)
+    else {
+        showResult();
+    }
+});
+
+function showResult() {
+
+    // Get house(s) with the highest score
+    let house = count_points()
+    console.log("done", house);
+
+    // Get the number of houses with the highest score.
+    let num = house.length
+
+    // If there's a tie between houses, show the last question
+    if(num > 1) {
+        showLastQuestion(house, num)
+    }
+    //If there's only one house with the highest score, display the result and send it to Python.
+    else if(num === 1) {
+        const chosenHouse = house[0];
+        console.log(chosenHouse)
+        
+        displayResult(chosenHouse)
+        sendResult(chosenHouse)
+    }
+}
+
+function showLastQuestion(house, num) {
+    // Disable the button
+    next.disabled = true;
+    // Display the last question
+    question.innerText = quiz[index]["q"];
+
+    // Change the button text to "Finish"
+    next.innerText = "Finish";
+
+    // Update the labels and input values to show the houses with the highest scores.
+    for(let i = 0; i < num; i++) {
+        labels[i].innerText = house[i];
+        answers[i].value = house[i];
+    }
+    // Hide the unused inputs by adding the "invisible" class to the remaining divs.
+    for(let j = num; j < divs.length; j++) {
+        console.log(divs[j]);
+        divs[j].classList.add("invisible");
+    }
+}
+
+function displayResult(chosenHouse) {
+     
+    // Get the crest of the chosen house 
+    const houseCrest = crest();
+    // Hide the quiz container
+    quiz_container.classList.add("invisible");
+    // Show the modal with the chosen house
+    modal.classList.remove("invisible");
+    finalHouse.innerText = `${chosenHouse}!`;
+    // Update the background color according to the house color.
+    const houseColor = color();
+    background.style.backgroundColor = houseColor;
+
+    $(document).ready(function() {
+        $("#staticBackdrop").modal("show");
+    });
+}
+
+function sendResult(chosenHouse) {
+
+    // Convert the chosen house to a JSON string
+    const result = JSON.stringify(chosenHouse);
+    console.log(result);
+
+    // Send the result to Python to update the database using AJAX
+    $.ajax({
+        url: "/house",
+        type: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(result)
+    })
+}
+
+</script>
+{% endblock %}
